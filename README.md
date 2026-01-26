@@ -37,3 +37,12 @@ This project was developed as part of a learning journey in machine learning.
 1. **Clone the repo**:
    ```bash
    git clone [https://github.com/your-username/breast-cancer-classification.git](https://github.com/your-username/breast-cancer-classification.git)
+
+2. **Install python dependencies**:
+   ```bash
+   pip install -r requirements.txt
+
+3. **Run the python file**:
+   ```bash
+   python model.py
+   
