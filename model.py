@@ -9,20 +9,19 @@ Original file is located at
 
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
+import seaborn as sns
 from sklearn import metrics
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report
 
 data = load_breast_cancer(as_frame=True)
-data["data"].head()
-data["target"].head()
 
 X = data['data']
 y = data['target']
-
-X.head()
 
 X_train, X_test, y_train, y_test = train_test_split(X, y , test_size=0.25, random_state=0)
 
@@ -37,14 +36,8 @@ model.fit(X_train, y_train)
 
 y_pred = model.predict(X_test)
 
+# Plotting cnf matrix
 cnf_matrix = metrics.confusion_matrix(y_test, y_pred)
-cnf_matrix
-
-"""# **Plotting confusion matrix**"""
-
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 class_names = [0,1]
 fig, ax = plt.subplots()
@@ -60,8 +53,6 @@ plt.title("Confusion Matrix")
 plt.ylabel("Actual Result")
 plt.xlabel("Predicted Result")
 
-"""# **Getting Accuracy**"""
-
-from sklearn.metrics import classification_report
+# Getting Accuracy
 target_names = ["Benign", "Malign"]
 print(classification_report(y_test, y_pred, target_names=target_names))
