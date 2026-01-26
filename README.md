@@ -29,6 +29,20 @@ The project uses the **Breast Cancer Wisconsin (Diagnostic) Dataset**. It includ
 * Mean Concavity
 * Area and Perimeter
 
+## Model Performance
+The model achieved high accuracy and reliability on the test set. Below is the detailed classification report:
+
+```text
+              precision    recall  f1-score   support
+
+      Benign       0.93      0.96      0.94        53
+      Malign       0.98      0.96      0.97        90
+
+    accuracy                           0.96       143
+   macro avg       0.95      0.96      0.96       143
+weighted avg       0.96      0.96      0.96       143
+```
+
 ## Learning Resources & Credits
 This project was developed as part of a learning journey in machine learning.
 * **Educational Reference**: Special thanks to [DataCamp's Logistic Regression Tutorial](https://www.datacamp.com/tutorial/understanding-logistic-regression-python) for providing the foundational concepts and guidance used to build this implementation.
